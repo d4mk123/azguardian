@@ -1,0 +1,247 @@
+controls:
+  - id: "2.1.2"
+    title: "Ensure that Network Security Groups are Configured for Databricks Subnets"
+    section: "Azure Databricks"
+    level: 1
+    automated: true
+    description: >
+      Network Security Groups (NSGs) should be implemented to control inbound and outbound
+      traffic to Azure Databricks subnets, ensuring only authorized communication. NSGs
+      should be configured with explicit deny rules.
+    rationale: >
+      Without NSGs, Databricks subnets may be exposed to unauthorized traffic, increasing
+      the risk of compromise.
+    audit: >
+      Navigate to Virtual Networks > Subnets, review NSG assignments for Databricks subnets.
+    remediation: >
+      Assign NSG to Databricks subnets under Networking > NSG Settings.
+
+  - id: "6.1.1.5"
+    title: "Ensure that Network Security Group Flow Logs are Captured and Sent to Log Analytics"
+    section: "Logging and Monitoring"
+    level: 2
+    automated: false
+    description: >
+      Ensure that network flow logs are captured and fed into a central log analytics workspace.
+      Note: NSG flow logs are being retired on September 30, 2027. Migrate to VNet flow logs.
+    rationale: >
+      Network Flow Logs provide valuable insight into the flow of traffic around your network,
+      enabling threat detection and incident response.
+    audit: >
+      Navigate to Network Watcher. Verify NSG flow logs are enabled and sent to Log Analytics.
+    remediation: >
+      Configure NSG flow log diagnostic settings to stream to a Log Analytics workspace.
+
+  - id: "6.1.1.6"
+    title: "Ensure that Virtual Network Flow Logs are Captured and Sent to Log Analytics"
+    section: "Logging and Monitoring"
+    level: 2
+    automated: false
+    description: >
+      Ensure that virtual network flow logs are captured and fed into a central log analytics
+      workspace. This is the successor to NSG flow logs.
+    rationale: >
+      Virtual network flow logs provide critical visibility into traffic patterns for faster
+      threat detection and response.
+    audit: >
+      Go to Network Watcher. Verify VNet flow logs are enabled and sent to Log Analytics.
+    remediation: >
+      Configure VNet flow log diagnostic settings to stream to a Log Analytics workspace.
+
+  - id: "6.1.2.3"
+    title: "Ensure that Activity Log Alert Exists for Create or Update Network Security Group"
+    section: "Logging and Monitoring"
+    level: 1
+    automated: true
+    description: >
+      Create an Activity Log Alert for the Create or Update Network Security Group event
+      (Microsoft.Network/networkSecurityGroups/write).
+    rationale: >
+      Monitoring for Create or Update Network Security Group events gives insight into
+      network access changes and may reduce the time it takes to detect suspicious activity.
+    audit: >
+      Navigate to Monitor > Alerts > Alert rules. Verify an alert exists with
+      operationName=Microsoft.Network/networkSecurityGroups/write.
+    remediation: >
+      Create an activity log alert filtering on operation
+      Microsoft.Network/networkSecurityGroups/write.
+
+  - id: "6.1.2.4"
+    title: "Ensure that Activity Log Alert Exists for Delete Network Security Group"
+    section: "Logging and Monitoring"
+    level: 1
+    automated: true
+    description: >
+      Create an activity log alert for the Delete Network Security Group event
+      (Microsoft.Network/networkSecurityGroups/delete).
+    rationale: >
+      Monitoring for Delete Network Security Group events gives insight into network access
+      changes and may reduce the time it takes to detect suspicious activity.
+    audit: >
+      Navigate to Monitor > Alerts > Alert rules. Verify an alert exists with
+      operationName=Microsoft.Network/networkSecurityGroups/delete.
+    remediation: >
+      Create an activity log alert filtering on operation
+      Microsoft.Network/networkSecurityGroups/delete.
+
+  - id: "7.1"
+    title: "Ensure that RDP Access from the Internet is Evaluated and Restricted"
+    section: "Networking Services"
+    level: 1
+    automated: true
+    description: >
+      Network security groups should be periodically evaluated for port misconfigurations.
+      RDP (port 3389/TCP) access from the Internet should be restricted or eliminated unless
+      explicitly required.
+    rationale: >
+      RDP over the Internet exposes resources to brute force and credential-based attacks.
+    audit: >
+      Review NSG inbound rules for port 3389/TCP with Source: 0.0.0.0/0, Internet, or Any.
+    remediation: >
+      Delete or restrict NSG inbound rules allowing RDP from the Internet.
+
+  - id: "7.2"
+    title: "Ensure that SSH Access from the Internet is Evaluated and Restricted"
+    section: "Networking Services"
+    level: 1
+    automated: true
+    description: >
+      Network security groups should be periodically evaluated for port misconfigurations.
+      SSH (port 22/TCP) access from the Internet should be restricted or eliminated unless
+      explicitly required.
+    rationale: >
+      SSH over the Internet exposes resources to brute force and credential-based attacks.
+    audit: >
+      Review NSG inbound rules for port 22/TCP with Source: 0.0.0.0/0, Internet, or Any.
+    remediation: >
+      Delete or restrict NSG inbound rules allowing SSH from the Internet.
+
+  - id: "7.3"
+    title: "Ensure that UDP Port Access from the Internet is Evaluated and Restricted"
+    section: "Networking Services"
+    level: 1
+    automated: true
+    description: >
+      Network security groups should be periodically evaluated for UDP port misconfigurations.
+      UDP ports (53, 123, 161, 389, 1900) from the Internet should be restricted unless
+      explicitly required.
+    rationale: >
+      Broadly exposing UDP services over the Internet can lead to denial-of-service and
+      amplification attacks.
+    audit: >
+      Review NSG inbound rules for UDP ports 53, 123, 161, 389, 1900 with Source: Internet.
+    remediation: >
+      Delete or restrict NSG inbound rules allowing these UDP ports from the Internet.
+
+  - id: "7.4"
+    title: "Ensure that HTTP(S) Access from the Internet is Evaluated and Restricted"
+    section: "Networking Services"
+    level: 1
+    automated: true
+    description: >
+      Network security groups should be periodically evaluated for port misconfigurations.
+      HTTP/HTTPS (ports 80, 443/TCP) access from the Internet should be restricted unless
+      explicitly required.
+    rationale: >
+      Unrestricted HTTP(S) access can expose applications to web-based attacks.
+    audit: >
+      Review NSG inbound rules for ports 80, 443/TCP with Source: 0.0.0.0/0, Internet, or Any.
+    remediation: >
+      Delete or restrict NSG inbound rules allowing HTTP(S) from the Internet.
+
+  - id: "7.5"
+    title: "Ensure that Network Security Group Flow Log Retention Days is Set to Greater than or equal to 90"
+    section: "Networking Services"
+    level: 2
+    automated: true
+    description: >
+      Network security group flow logs should be enabled and the retention period set to
+      greater than or equal to 90 days. Note: NSG flow logs are being retired on
+      September 30, 2027. Migrate to VNet flow logs.
+    rationale: >
+      Retaining flow logs for at least 90 days supports incident investigation and compliance.
+    audit: >
+      Use az network watcher flow-log list and verify enabled=true and days >= 90 or 0 (indefinite).
+    remediation: >
+      Set NSG flow log retention to 90 days or greater.
+
+  - id: "7.6"
+    title: "Ensure that Network Watcher is Enabled for Azure Regions That are in Use"
+    section: "Networking Services"
+    level: 2
+    automated: true
+    description: >
+      Enable Network Watcher for physical regions in Azure subscriptions. Network Watcher
+      is a prerequisite for NSG flow logs, VNet flow logs, and network diagnostics.
+    rationale: >
+      Network diagnostic and visualization tools available with Network Watcher help users
+      understand, diagnose, and gain insights to the network in Azure.
+    audit: >
+      Search for Network Watcher service and verify it is enabled for each region in use.
+    remediation: >
+      Enable Network Watcher in each region where you have deployed resources.
+
+  - id: "7.8"
+    title: "Ensure that Virtual Network Flow Log Retention Days is Set to Greater than or Equal to 90"
+    section: "Networking Services"
+    level: 2
+    automated: true
+    description: >
+      Ensure that virtual network flow logs are retained for greater than or equal to 90 days.
+      This is the successor to NSG flow logs.
+    rationale: >
+      Virtual network flow logs provide critical visibility into traffic patterns. Logs can be
+      used to check for anomalies and give insight into suspected breaches.
+    audit: >
+      Use az network watcher flow-log list and verify days >= 90 or 0 (indefinite).
+    remediation: >
+      Set VNet flow log retention to 90 days or greater.
+
+  - id: "7.11"
+    title: "Ensure Subnets Are Associated with Network Security Groups"
+    section: "Networking Services"
+    level: 1
+    automated: true
+    description: >
+      Protect subnet resources by ensuring subnets are associated with network security groups,
+      which can filter inbound and outbound traffic using security rules.
+    rationale: >
+      Unprotected subnets can expose resources to unauthorized access.
+    audit: >
+      Navigate to Virtual networks, select each subnet, and verify Network security group
+      is not set to None.
+    remediation: >
+      Associate each subnet with an NSG.
+
+  - id: "7.16"
+    title: "Ensure Azure Network Security Perimeter is Used to Secure Azure Platform-as-a-service Resources"
+    section: "Networking Services"
+    level: 2
+    automated: false
+    description: >
+      Azure Network Security Perimeter creates a logical boundary around Azure PaaS resources
+      outside of virtual networks, denying public access by default with explicit rules for
+      inbound and outbound traffic.
+    rationale: >
+      Network security perimeter denies public access to PaaS resources, reducing exposure
+      to unauthorized network access.
+    audit: >
+      Go to Network Security Perimeters. Verify perimeters exist and PaaS resources are associated.
+    remediation: >
+      Create a network security perimeter and associate applicable PaaS resources.
+
+  - id: "8.5"
+    title: "Ensure Azure DDoS Network Protection is Enabled on Virtual Networks"
+    section: "Security Services"
+    level: 2
+    automated: true
+    description: >
+      Azure DDoS Network Protection defends resources in virtual networks against
+      distributed denial-of-service (DDoS) attacks.
+    rationale: >
+      Virtual networks and resources are protected against DDoS attacks, helping to ensure
+      availability and resilience.
+    audit: >
+      Navigate to Virtual Networks. Verify DDoS Network Protection is set to Enable.
+    remediation: >
+      Enable DDoS Network Protection on each virtual network.
