@@ -89,12 +89,12 @@
 * Write `collector.py`: pulls NSGs via `azure-mgmt-network`, plus an offline loader for `az network nsg list -o json` exports
 * **Deliverable:** working collector producing normalized JSON from either source
 
-**Day 4 — Test data, part 1**
+<b>~~Day 4 — Test data, part 1~~</b>
 
 * Build 4–5 JSON fixtures covering violation patterns: open 22/3389 to `0.0.0.0/0`, missing flow logs, `Any/Any` rules, shadowed/redundant rule pairs, subnet with no NSG attached
 * **Deliverable:** `/test-data` folder with core fixtures
 
-**Day 5 — Test data, part 2 + buffer**
+<b>~~Day 5 — Test data, part 2 + buffer~~</b>
 
 * Add a couple more edge-case fixtures (IPv6 rules, huge rulesets, malformed exports)
 * Catch up on anything from Days 1–4 that ran long — this slack is intentional

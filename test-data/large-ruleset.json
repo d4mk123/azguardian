@@ -1,0 +1,924 @@
+{
+  "value": [
+    {
+      "name": "large-nsg",
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg",
+      "location": "eastus",
+      "tags": {},
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "edge006",
+        "securityRules": [
+          {
+            "name": "ViolationRule1",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/ViolationRule1",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Violation rule 1",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "0.0.0.0/0",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 101,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "ViolationRule2",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/ViolationRule2",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Violation rule 2",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "Internet",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 102,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "ViolationRule3",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/ViolationRule3",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Violation rule 3",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80",
+              "sourceAddressPrefix": "0.0.0.0/0",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 103,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "ViolationRule4",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/ViolationRule4",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Violation rule 4",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 104,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule8",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule8",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 8",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "9200",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 360,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule43",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule43",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 43",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "636",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 440,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule13",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule13",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 13",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 620,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule54",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule54",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 54",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "993",
+              "sourceAddressPrefix": "192.168.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 705,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule38",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule38",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 38",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "123",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 770,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule17",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule17",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 17",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1165,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule27",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule27",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 27",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "161",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1330,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule52",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule52",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 52",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "161",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1345,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule5",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule5",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 5",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3306",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1395,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule19",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule19",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 19",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "995",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1430,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule44",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule44",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 44",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "636",
+              "sourceAddressPrefix": "192.168.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1565,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule40",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule40",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 40",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "1433",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1610,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule29",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule29",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 29",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "6379",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 1705,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule37",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule37",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 37",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "172.16.0.0/12",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1775,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule34",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule34",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 34",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1795,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule30",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule30",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 30",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "6379",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1830,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule46",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule46",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 46",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1845,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule24",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule24",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 24",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8080",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1880,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule36",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule36",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 36",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "389",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2020,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule45",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule45",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 45",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "5432",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2075,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule20",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule20",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 20",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule21",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule21",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 21",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "25",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2135,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule35",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule35",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 35",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "1433",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2165,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule7",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule7",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 7",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "389",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2175,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule41",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule41",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 41",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8080",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2310,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule11",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule11",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 11",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "389",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2320,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule53",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule53",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 53",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "993",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2420,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule10",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule10",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 10",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "123",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2450,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule32",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule32",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 32",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "995",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2535,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule12",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule12",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 12",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "53",
+              "sourceAddressPrefix": "192.168.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 2750,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule16",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule16",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 16",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3306",
+              "sourceAddressPrefix": "192.168.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 2955,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule6",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule6",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 6",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "6379",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3050,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule14",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule14",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 14",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3105,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule26",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule26",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 26",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "1433",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3125,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule39",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule39",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 39",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "53",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3215,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule28",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule28",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 28",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "123",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3220,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule47",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule47",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 47",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "5432",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3225,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule9",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule9",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 9",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "636",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3240,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule42",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule42",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 42",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80",
+              "sourceAddressPrefix": "172.16.0.0/12",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3270,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule31",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule31",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 31",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "8080",
+              "sourceAddressPrefix": "10.1.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3345,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule18",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule18",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 18",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3375,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule48",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule48",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 48",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "27017",
+              "sourceAddressPrefix": "172.16.0.0/12",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3500,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule23",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule23",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 23",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3535,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule25",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule25",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 25",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "389",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3645,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule50",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule50",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 50",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3730,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule22",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule22",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 22",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "6379",
+              "sourceAddressPrefix": "192.168.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3745,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule49",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule49",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 49",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "9200",
+              "sourceAddressPrefix": "192.168.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3750,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule33",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule33",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 33",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "6379",
+              "sourceAddressPrefix": "172.16.0.0/12",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3780,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule51",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule51",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 51",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 3925,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Rule15",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/large-nsg/securityRules/Rule15",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Auto-generated rule 15",
+              "protocol": "Udp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "161",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 4020,
+              "direction": "Inbound"
+            }
+          }
+        ],
+        "defaultSecurityRules": [
+          {
+            "name": "AllowVnetInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 65000,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowAzureLoadBalancerInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 65001,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyAllInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 65500,
+              "direction": "Inbound"
+            }
+          }
+        ],
+        "subnets": [],
+        "networkInterfaces": []
+      }
+    }
+  ]
+}

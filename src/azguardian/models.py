@@ -12,6 +12,9 @@ class SecurityProtocol(StrEnum):
     TCP = "Tcp"
     UDP = "Udp"
     ASTERISK = "*"
+    ICMP = "Icmp"
+    ESP = "Esp"
+    AH = "Ah"
 
 
 class SecurityAccess(StrEnum):
