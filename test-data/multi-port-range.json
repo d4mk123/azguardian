@@ -1,0 +1,108 @@
+{
+  "value": [
+    {
+      "name": "multi-port-nsg",
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/multi-port-nsg",
+      "location": "eastus",
+      "tags": {},
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "edge004",
+        "securityRules": [
+          {
+            "name": "Web-CommaPorts",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/multi-port-nsg/securityRules/Web-CommaPorts",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Allow HTTP/HTTPS from internet — comma-separated ports",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "80,443",
+              "sourceAddressPrefix": "0.0.0.0/0",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "App-RangePorts",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/multi-port-nsg/securityRules/App-RangePorts",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Allow app ports range from VNet",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3000-4000",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "Admin-MultiPorts",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/multi-port-nsg/securityRules/Admin-MultiPorts",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Allow multiple admin ports from internet",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22,80,443,3389,8080",
+              "sourceAddressPrefix": "0.0.0.0/0",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 120,
+              "direction": "Inbound"
+            }
+          }
+        ],
+        "defaultSecurityRules": [
+          {
+            "name": "AllowVnetInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 65000,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowAzureLoadBalancerInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 65001,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyAllInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 65500,
+              "direction": "Inbound"
+            }
+          }
+        ],
+        "subnets": [],
+        "networkInterfaces": []
+      }
+    }
+  ]
+}
