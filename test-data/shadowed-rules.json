@@ -1,0 +1,124 @@
+{
+  "value": [
+    {
+      "name": "shadowed-nsg",
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/shadowed-nsg",
+      "location": "eastus",
+      "tags": {},
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "abc789",
+        "securityRules": [
+          {
+            "name": "AllowSSHFromVNet",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/shadowed-nsg/securityRules/AllowSSHFromVNet",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Allow SSH from VNet",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenySSHFromSubnet",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/shadowed-nsg/securityRules/DenySSHFromSubnet",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Deny SSH from a specific subnet — shadowed by AllowSSHFromVNet",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "10.0.0.0/24",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 200,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowRDPFromVNet",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/shadowed-nsg/securityRules/AllowRDPFromVNet",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Allow RDP from VNet",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "10.0.0.0/16",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 101,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyRDPFromSubnet",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/shadowed-nsg/securityRules/DenyRDPFromSubnet",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Deny RDP from a specific subnet — shadowed by AllowRDPFromVNet",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "10.0.0.0/24",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 201,
+              "direction": "Inbound"
+            }
+          }
+        ],
+        "defaultSecurityRules": [
+          {
+            "name": "AllowVnetInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 65000,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowAzureLoadBalancerInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 65001,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyAllInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 65500,
+              "direction": "Inbound"
+            }
+          }
+        ],
+        "subnets": [],
+        "networkInterfaces": []
+      }
+    }
+  ]
+}

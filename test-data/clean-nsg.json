@@ -1,0 +1,108 @@
+{
+  "value": [
+    {
+      "name": "clean-nsg",
+      "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/clean-nsg",
+      "location": "eastus",
+      "tags": {},
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "def456",
+        "securityRules": [
+          {
+            "name": "HTTPS-FromVNet",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/clean-nsg/securityRules/HTTPS-FromVNet",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Allow HTTPS from VNet only",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "443",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 100,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "SSH-FromCorp",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/clean-nsg/securityRules/SSH-FromCorp",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Allow SSH from corporate IP range",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "22",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 110,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "RDP-FromCorp",
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/clean-nsg/securityRules/RDP-FromCorp",
+            "properties": {
+              "provisioningState": "Succeeded",
+              "description": "Allow RDP from corporate IP range",
+              "protocol": "Tcp",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "10.0.0.0/8",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 120,
+              "direction": "Inbound"
+            }
+          }
+        ],
+        "defaultSecurityRules": [
+          {
+            "name": "AllowVnetInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "VirtualNetwork",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 65000,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "AllowAzureLoadBalancerInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "AzureLoadBalancer",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 65001,
+              "direction": "Inbound"
+            }
+          },
+          {
+            "name": "DenyAllInBound",
+            "properties": {
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "*",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "*",
+              "access": "Deny",
+              "priority": 65500,
+              "direction": "Inbound"
+            }
+          }
+        ],
+        "subnets": [],
+        "networkInterfaces": []
+      }
+    }
+  ]
+}
