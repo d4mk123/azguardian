@@ -1,0 +1,37 @@
+{
+  "value": [
+    {
+      "name": "FlowLog-clean-nsg",
+      "properties": {
+        "targetResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/clean-nsg",
+        "enabled": true,
+        "retentionPolicy": {
+          "days": 90,
+          "enabled": true
+        }
+      }
+    },
+    {
+      "name": "FlowLog-violation-nsg",
+      "properties": {
+        "targetResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/violation-nsg",
+        "enabled": true,
+        "retentionPolicy": {
+          "days": 30,
+          "enabled": true
+        }
+      }
+    },
+    {
+      "name": "FlowLog-any-any-nsg-disabled",
+      "properties": {
+        "targetResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/test-rg/providers/Microsoft.Network/networkSecurityGroups/any-any-nsg",
+        "enabled": false,
+        "retentionPolicy": {
+          "days": 0,
+          "enabled": false
+        }
+      }
+    }
+  ]
+}

@@ -80,7 +80,37 @@ class NetworkSecurityGroup(BaseModel):
         return data
 
 
+class RetentionPolicy(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+
+    days: int
+    enabled: bool
+
+
+class FlowLog(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+
+    name: str
+    target_resource_id: str
+    enabled: bool
+    retention_policy: RetentionPolicy | None = None
+
+    @model_validator(mode='before')
+    @classmethod
+    def _flatten_properties(cls, data: dict) -> dict:
+        if isinstance(data, dict) and 'properties' in data:
+            props = data.pop('properties')
+            data.update(props)
+        return data
+
+
 class NSGListResult(BaseModel):
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
 
     value: list[NetworkSecurityGroup]
+
+
+class FlowLogListResult(BaseModel):
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
+
+    value: list[FlowLog]
