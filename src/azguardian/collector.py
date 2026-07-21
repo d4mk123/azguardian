@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from .models import NSGListResult, NetworkSecurityGroup
+from .models import NSGListResult, FlowLogListResult, NetworkSecurityGroup, FlowLog
 
 
 def collect_from_file(path: str | Path) -> list[NetworkSecurityGroup]:
@@ -32,3 +32,14 @@ def collect_from_azure(subscription_id: str) -> list[NetworkSecurityGroup]:
     raw_nsgs = list(client.network_security_groups.list_all())
     nsg_dicts = [nsg.as_dict() for nsg in raw_nsgs]
     return NSGListResult.model_validate({'value': nsg_dicts}).value
+
+
+def collect_flow_logs_from_file(path: str | Path) -> list[FlowLog]:
+    with open(path) as f:
+        data = json.load(f)
+
+    if isinstance(data, list):
+        data = {'value': data}
+
+    result = FlowLogListResult.model_validate(data)
+    return result.value
